@@ -1,10 +1,14 @@
 import numpy as np
+from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.feature_extraction.text import TfidfTransformer
+from sklearn.naive_bayes import MultinomialNB
+from sklearn.pipeline import Pipeline
 def get_train_data(filename):
     X  = []
     y_task1 = []
     y_task2 = []
     
-    with open(filename) as file:
+    with open(filename, encoding='UTF-8') as file:
         for line in file:
             tweet = line.rstrip('\n').split('\t')
             X.append(tweet[0])
