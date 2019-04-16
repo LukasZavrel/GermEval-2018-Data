@@ -3,6 +3,8 @@ from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.feature_extraction.text import TfidfTransformer
 from sklearn.naive_bayes import MultinomialNB
 from sklearn.pipeline import Pipeline
+from sklearn import metrics
+from sklearn.model_selection import GridSearchCV
 def get_train_data(filename):
     X  = []
     y_task1 = []
